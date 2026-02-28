@@ -1,28 +1,32 @@
 
-import axios from "axios";
+import type { AxiosError, AxiosResponse, InternalAxiosRequestConfig } from "axios";
 import config from "../config/config";
+import axios from "axios";
 
 export const axiosInstance = axios.create({
     baseURL: config.baseUrl,
     withCredentials: false
-})
+});
 
-axiosInstance.interceptors.request.use(function(config){
-    return config
-}, function(error){
-    return Promise.reject(error)
-})
+// Request interceptor
+axiosInstance.interceptors.request.use(
+    (config: InternalAxiosRequestConfig) => {
+        // You can add headers here (e.g., Auth tokens)
+        return config;
+    }, 
+    (error: AxiosError) => {
+        return Promise.reject(error);
+    }
+);
 
-// Add a response interceptor
+// Response interceptor
 axiosInstance.interceptors.response.use(
-  function onFulfilled(response) {
-    // Any status code that lie within the range of 2xx cause this function to trigger
-    // Do something with response data
-    return response;
-  },
-  function onRejected(error) {
-    // Any status codes that falls outside the range of 2xx cause this function to trigger
-    // Do something with response error
-    return Promise.reject(error);
-  }
+    (response: AxiosResponse) => {
+        // Handle successful responses
+        return response;
+    },
+    (error: AxiosError) => {
+        // Handle errors (e.g., 401 Unauthorized)
+        return Promise.reject(error);
+    }
 );
