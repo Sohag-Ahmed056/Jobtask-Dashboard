@@ -12,6 +12,8 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.2",
     "@tailwindcss/vite": "^4.2.1",
+    "@types/axios": "^0.14.4",
+    "axios": "^1.13.6",
     "framer-motion": "^12.34.3",
     "js-cookie": "^3.0.5",
     "lucide-react": "^0.575.0",
