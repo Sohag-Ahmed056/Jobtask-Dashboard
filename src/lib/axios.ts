@@ -4,7 +4,7 @@ import config from "../config/config";
 
 export const axiosInstance = axios.create({
     baseURL: config.baseUrl,
-    withCredentials: true
+    withCredentials: false
 })
 
 axiosInstance.interceptors.request.use(function(config){

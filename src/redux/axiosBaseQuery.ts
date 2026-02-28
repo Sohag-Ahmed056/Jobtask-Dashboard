@@ -16,7 +16,7 @@ const axiosBaseQuery = (): BaseQueryFn<
     try{
         const result = await axiosInstance({
             url,
-            method: method || 'GET',
+            method: method || 'GET'||'POST',
             data,
             params,
             headers

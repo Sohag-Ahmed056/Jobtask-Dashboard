@@ -1,10 +1,10 @@
-import React from 'react';
+
 import { Search, Bell, Mail, Command } from 'lucide-react';
 
 const Topbar = () => {
   return (
     <div className="flex justify-between items-center mb-10 py-2">
-      {/* Search Bar */}
+      
       <div className="relative w-full max-w-md">
         <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
         <input 
@@ -17,7 +17,7 @@ const Topbar = () => {
         </div>
       </div>
 
-      {/* Actions & Profile */}
+    
       <div className="flex items-center gap-3">
         <button className="p-2.5 text-gray-500 bg-white border border-gray-100 rounded-full hover:bg-gray-50 transition-colors">
           <Mail size={18}/>

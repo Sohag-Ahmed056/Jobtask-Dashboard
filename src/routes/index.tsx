@@ -19,7 +19,8 @@ export const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "dashboard",
+        // Restore the path here!
+        path: "dashboard", 
         element: (
           <ProtectedRoute>
             <Dashboard />

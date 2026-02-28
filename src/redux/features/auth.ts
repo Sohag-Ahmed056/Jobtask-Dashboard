@@ -7,16 +7,16 @@ export const authApi = baseApi.injectEndpoints({
             query: (userInfo) => ({
                 url: '/user/register',
                 method: 'POST',
-                body: userInfo // Note: RTK Query usually uses 'body' instead of 'data'
+                body: userInfo 
             }),
             invalidatesTags: ['AUTH']
         }),
-        // Add the Login Mutation here
+        
         userLogin: builder.mutation({
             query: (credentials) => ({
                 url: '/api/login',
                 method: 'POST',
-                body: credentials
+                data: credentials
             }),
             invalidatesTags: ['AUTH']
         }),
